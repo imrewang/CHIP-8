@@ -94,7 +94,17 @@ HIP-8有35个指令，都为两字节长，以大端方式存储。指令表的�
 | FX55 | 内存地址 | 将V0到VX的值存入I中地址为起始的内存空间                      |
 | FX65 | 内存地址 | 将I中地址为起始的内容依次存入V0-VX                           |
 
+# 5.CPU结构
 
+```rust
+struct CPU {
+    registers: [u8; 16],
+    position_in_memory: usize, // program counter ("PC")
+    memory: [u8; 4096],
+    stack: [u16; 16], 
+    stack_pointer: usize,
+}
+```
 
 
 
